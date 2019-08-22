@@ -23,7 +23,7 @@ final class ParserTest extends TestCase
 
 	public function testCanBeCreatedFromAValidZipFile(): void
 	{
-		$p = Parser::fromFile(__DIR__ . "/exporter.zip");
+		$p = Parser::fromFile(__DIR__ . "/valid.zip");
 		$this->assertInstanceOf(Parser::class, $p);
 	}
 }
