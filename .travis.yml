@@ -4,5 +4,6 @@ php:
 install:
   - composer install
 script:
-  - ./runchecks.sh
-  
+  - bash ./runchecks.sh
+ after_success:
+  - bash <(curl -s https://codecov.io/bash)
