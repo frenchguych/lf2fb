@@ -5,5 +5,5 @@ install:
   - composer install
 script:
   - bash ./runchecks.sh
- after_success:
+after_success:
   - bash <(curl -s https://codecov.io/bash)
