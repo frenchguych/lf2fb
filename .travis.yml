@@ -1,10 +1,9 @@
 language: php
 php:
-  - '7.1'
+  - 7.1
 install:
   - composer install
 script:
-  - ./vendor/bin/phpcs --colors --standard=PEAR --exclude=PEAR.Commenting.FileComment,PEAR.Commenting.ClassComment src/
-  - ./vendor/bin/phpstan --ansi analyze src/
-  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --colors --testdox tests/
-  
+  - bash ./runchecks.sh
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t a9e86d05-b880-4fcb-b1bc-c75bd7af0db2
